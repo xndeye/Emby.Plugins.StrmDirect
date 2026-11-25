@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>0.1.0</Version>
+    <Description>Direct STRM playback for Emby.</Description>
+    <!-- GPL-3.0 retained from earlier releases; the original project was inspired by honue/MediaInfoKeeper. -->
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <EmbySdkVersion Condition="'$(EmbySdkVersion)' == ''">4.9.1.90</EmbySdkVersion>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MediaBrowser.Server.Core" Version="$(EmbySdkVersion)" PrivateAssets="all" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.3" PrivateAssets="all" />
+    <EmbeddedResource Include="../../THIRD-PARTY-NOTICES.txt" LogicalName="StrmDirect.Licenses.THIRD-PARTY-NOTICES.txt" />
+  </ItemGroup>
+</Project>
